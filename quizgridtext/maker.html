@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>test quiz draggable</title>
+		<style>
+			.gridwordstextcell {border:1px solid black; border-radius: 10px; -moz-border-radius: 10px;} 
+			.gridwordstextcell h3{margin: 0px; margin-bottom: 10px;  border-top-left-radius: 10px; border-top-right-radius: 10px; -moz-border-top-left-radius: 10px; -moz-border-top-right-radius: 10px; text-align:center; background: #eee;border-bottom:1px solid black;}
+			.gridwordstextcell.success h3{background:#0f0;color:#fff;}
+			.gridwordstextcell.error h3{background:#f00;color:#fff;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.plugin.quizgridwordstextmaker.js"></script>
+		<script src="rtv.plugin.quizgridwordstext.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('input').click(function(){
+					$('.gridwordstextmaker').toQuizGridWordsTextMaker({src:'textarea[name=source]',target:'textarea[name=code]'});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Generación Grid Text</h1>
+		<input type="button" value="start"><br>
+		<textarea name="source" style="display:block;height:200px;width:500px">PEIXOS:anxova,bis,boga,caua,clavellada,congre,corball,déntol,escòrpora,gallimó,garneu,gòbit,garota,guiula,malarmat,pagre,roger,senyora,verat;VENTS:tramuntana,gregal,xaloc,llevant,garbí,llebeig,migjorn,ponent,mestral,cerç</textarea>
+		<div class="gridwordstextmaker">
+		</div>
+		<textarea name="code" style="display:block;height:200px;width:500px"></textarea>
+	</body>
+</html>

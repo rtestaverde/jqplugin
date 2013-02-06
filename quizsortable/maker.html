@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>test quiz sortable</title>
+		<style>
+			textarea{display: block; min-height: 10em; height: auto !important; height: 10em;width: 100%;}
+			.quizsortable ul { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+			.quizsortable ul li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+			.quizsortable li span { position: absolute; margin-left: -1.3em; }
+			.ordered{background: #cfc !important;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.plugin.quizsortablemaker.js"></script>
+		<script src="rtv.plugin.quizsortable.js"></script>
+		<script>
+			$(document).ready(function() {
+				translation= {
+					buttons: {
+						save: 'Guardar',
+						reset: 'Reiniciar'
+					},
+					messages:{
+						emptytext: 'El texto está vacío.'
+					}
+				};
+				$('.quizboxmaker').toQuizSortableMaker({labels: translation});		
+			});//end ready function
+		</script>
+	</head>
+	<body>
+		<h1>Generación Quiz Sortable</h1>
+		<div class="quizboxmaker">
+			<textarea name="testo" class="testo"></textarea>
+		</div>
+		<h2>Test Sortable Quiz</h2>
+		<div class="quizsortable"></div>
+		<textarea name="codice" id="codice"></textarea>
+	</body>
+</html>

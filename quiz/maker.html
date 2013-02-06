@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>test quiz</title>
+		<style>
+			.questionselected{background:#ccc;}
+			.answerselected{background:#ccf;}
+			.questionsuccess{color: green;}
+			.questionerror{color: red;}
+			.questionnoanswer{color: #ccc;font-style:italic;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.sjcl.js"></script>
+		<script src="rtv.plugin.quizmaker.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.quizboxmaker').toQuizMaker({oButtonSave: $('#saveButton'), oButtonApply: $('#applyButton')}).dataload();		
+			});//end ready function
+		</script>
+	</head>
+	<body>
+		<h1>Generación Quiz</h1>
+		<input type="submit" value="Desar" name="Desar" id="saveButton" />
+		<textarea name="contingut"   id="contingut"></textarea>
+	<div class="row">	
+		<div class="quizboxmaker span9">
+			<div class="input-append" style="text-align: right; margin-bottom:0px">
+				<button value="add" type="button" class="btn">Afegir</button>
+				<button value="delete" type="button" class="btn">Borrar</button>
+			</div>
+			<div class="framework"></div>
+		</div>
+	</div>
+	<div id="formAddQuestion">
+		<h3>Afegir.Pregunta</h3>
+		<textarea name="question" id="newquestion" value="" placeholder="Escriu.Pregunta..." ></textarea>
+		<br />
+		<h3>tipus</h3>
+		<label class="checkbox"><input type="radio" name="typequestion" value="1" checked="checked" />&nbsp;Simple</label>
+		<label class="checkbox"><input type="radio" name="typequestion" value="2" />&nbsp;Multiple</label><br />
+	</div>
+	<div id="formAddAnswer">
+		<h3>Afegir.Resposta</h3>
+		<input type="text" name="answer" id="newanswer" value="" placeholder="Escriu.Resposta..." />
+		<br />
+		<label class="checkbox"><input type="checkbox" name="answerok" value="1" />&nbsp;Correcta</label><br />
+	</div>
+	</body>
+</html>

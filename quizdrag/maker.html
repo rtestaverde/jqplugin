@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>test quiz draggable</title>
+		<style>
+			#framebox{background:#ccc;border: 1px solid black; min-height: 1em; width: 300px;}
+			#framebox dd{margin: 0px; padding-0px;display: inline-block; width: 149px; font-weight: bold; color: #fff; border-left: 1px solid black;}
+			#framebox dt{margin:0px; padding:0px;display: inline-block; width: 150px;}
+			.highlight{background: #cff;}
+			.selected{background: #ccf}
+			/* test generated quiz */
+			.dragquiztest{background:#eee;border: 1px solid black; min-height: 1em; width: 300px; margin: 20px 0px;}
+			.dragquiztest dd{margin: 0px; padding: 4px 0px;display: inline-block; width: 149px; font-weight: bold; color: #fff;}
+			.dragquiztest dt{margin:0px; padding: 4px 0px;display: inline-block; width: 150px; border-right: 1px solid black;}
+			.dragquizoptions{border: 1px solid black; min-height: 1em; width: 300px;}
+			.dragquizoptions .dragquizoption{display: inline-block; width: auto; border: 1px solid #a00; background: fcc; color: red; padding: 2px 5px; cursor: move; margin: 2px;}
+			.hover{background: #f00;}
+			.dragquestionsuccess{color: #fff; background: green;}
+			.dragquestionerror{color: #fff; background: red;}
+			.dragquestionnoanswer{color: #666; background: #ddd;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.plugin.quizdragmaker.js"></script>
+		<script src="rtv.plugin.quizdrag.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.quizboxmaker').toQuizDragMaker({});
+				act();
+			});
+			function act(){
+				$('.dragquiz').toQuizDrag({});
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Generación Quiz</h1>
+		<div class="quizboxmaker">
+			<dl id="framebox">
+			</dl>
+			<div class="buttonbar">
+				<button value="add" type="button">Afegir</button>
+				<button value="delete" type="button">Borrar</button>
+				<button value="save" type="button">Desar</button>
+			</div>
+		</div>
+		<div class="testgenerated">
+		</div>
+		<textarea name="contingut"></textarea>
+		<div id="formAddQuestion">
+			<h3>Afegir una pareja</h3>
+			<input name="question" id="newquestion" value="" placheholder="Escribe la pregunta" /><br />
+			<input name="answer" id="newanswer" value="" placheholder="Escribe la respuesta" /><br />
+		</div>
+	</body>
+</html>

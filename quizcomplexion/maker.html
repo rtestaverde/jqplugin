@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>test word complexion</title>
+		<style>		
+			.wordcomplexionsuccess{font-weight: bold; color: green;}
+			.wordcomplexionerror{background: #fcc;}
+			.wordcomplexionshow{font-weight:bold;color: #999;font-style:italic;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<link rel="stylesheet" type="text/css" href="jHtmlArea.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="jHtmlArea-0.7.5.js"></script>
+		<script src="rtv.plugin.wordscomplexion.js"></script>
+		<script src="rtv.plugin.wordscomplexionmaker.js"></script>
+		<script>
+			$(document).ready(function(){
+				translation= {
+					buttons: {
+						save: 'Guardar',
+						reset: 'Reiniciar',
+						show: 'Mostrar'
+					}
+				}
+				
+				$('.quizboxmaker').toWordsComplexionMaker(translation);
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Generaci&ograve;n Texto para rellenar</h1>
+		<div class="quizboxmaker">
+			<input type="checkbox" id="placeholder"> usar palabras
+			<textarea id="testo" cols="50" rows="15"></textarea>
+		</div>
+		<div id="stringbuffer"></div>
+		<div class="testgenerated" style="float:left; margin-bottom: 2em;">
+		</div>
+		<div style="clear: left">
+			<textarea id="codice"></textarea>
+		<div>
+	</body>
+</html>

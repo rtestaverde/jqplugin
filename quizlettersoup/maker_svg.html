@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test sopa de letras</title>
+		<style>
+			ul{min-height: 10em; border: 1px solid #ccc; width: 200px; padding-left: 10px;}
+			li{list-style: none;}
+			.highlighted{background: #ffc;}
+			.selected{background: #cfc;}
+			.lettertable{border: 1px solid #fcc; background: #fff; margin-right: 1em;}
+			.cellnormal{background: transparent;}
+			.wordslist{background: #fff;}
+			.cellhover{background: url(images/highlight.png); background-position: 0px 0px; background-repeat: no-repeat;}
+			.cellselected{background: url(images/highlight.png); background-position: -20px 0px; background-repeat: no-repeat;}
+			.cellverified{background: url(images/highlight.png); background-position: -40px 0px; background-repeat: no-repeat;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.RtvSvg.min.js"></script>
+		<script src="rtv.plugin.svglettersoup.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				translation= {
+					buttons: {
+						save: 'Guardar',
+						reset: 'Reiniciar'
+					}
+				}
+				defaults='amore,tesoro,salsiccia,pomodoro,mozzarella,tarantella,caramella,mortadella,mandarino,provolone';
+				$('#framebox').val(defaults);
+				$('button[value="save"]').text(translation.buttons.save).button().click(function(){
+					words = $('#framebox').val();
+					$('.svglettersoup').attr('data',words);
+					$('.svglettersoup').toSvgLetterSoup({labels: translation,numcols:14,numrows:14,linecolor:'#0f0'});
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Generación Sopa de letras</h1>
+		<div class="quizboxmaker">
+			<textarea id="framebox">
+			</textarea>
+			<div class="buttonbar">
+				<button value="save" type="button">Save</button>
+			</div>
+		</div>
+		<div id="svglettersoup01" class="svglettersoup" style="float:left; margin-bottom: 2em; width:430px; border: 1px solid red" data=""></div>
+	</body>
+</html>

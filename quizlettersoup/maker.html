@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>test sopa de letras</title>
+		<style>
+			ul{min-height: 10em; border: 1px solid #ccc; width: 200px; padding-left: 10px;}
+			li{list-style: none;}
+			.highlighted{background: #ffc;}
+			.selected{background: #cfc;}
+			.lettertable{border: 1px solid #fcc; background: #fff; margin-right: 1em;}
+			.cellnormal{background: transparent;}
+			.wordslist{border: 1px solid #fcc; background: #fff;}
+			.cellhover{background: url(images/highlight.png); background-position: 0px 0px; background-repeat: no-repeat;}
+			.cellselected{background: url(images/highlight.png); background-position: -20px 0px; background-repeat: no-repeat;}
+			.cellverified{background: url(images/highlight.png); background-position: -40px 0px; background-repeat: no-repeat;}		
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.plugin.lettersoupmaker.js"></script>
+		<script src="rtv.plugin.lettersoup.js"></script>
+		<script>
+			$(document).ready(function(){
+				translation= {
+					buttons: {
+						save: 'Guardar',
+						reset: 'Reiniciar'
+					}
+				}
+				defaults='amore,tesoro,salsiccia,pomodoro,mozzarella,tarantella,caramella,mortadella,mandarino,provolone';
+				$('.quizboxmaker').toLetterSoupMaker({labels: translation,words: defaults});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Generación Sopa de letras</h1>
+		<div class="quizboxmaker">
+			<textarea id="framebox">
+			</textarea>
+			<div class="buttonbar">
+				<button value="save" type="button">Save</button>
+			</div>
+		</div>
+		<div id="stringbuffer"></div>
+		<div class="testgenerated test" style="float:left; margin-bottom: 2em;">
+		</div>
+		<div style="clear: left">
+			<textarea name="codice"></textarea>
+		<div>
+	</body>
+</html>

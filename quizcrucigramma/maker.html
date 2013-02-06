@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>test sopa de letras</title>
+		<style>
+			.crucigramaol{font-size: 0.8em; line-height: 20px; vertical-align: center;}
+			.crucigramakeyletter{background: #fcc;}
+			.crucigramarowsuccess,.crucigramarowsuccess input{background: #cfc;}
+			.crucigramarowerror,.crucigramarowerror input{background: red;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="jquery.ui.base.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.ui.theme.css" />
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.plugin.crucigramamaker.js"></script>
+		<script src="rtv.plugin.crucigrama.js"></script>
+		<script>
+			$(document).ready(function(){
+				translation= {
+					buttons: {
+						check: 'Controlar',
+						show: 'Mostrar',
+						save: 'Guardar',
+						reset: 'Reiniciar'
+					}
+				}
+				$('#maker').toCrucigramaMaker({labels:translation});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Generación Crucigrama</h1>
+		<div id="maker">
+			<textarea id="words">esblaimada,atiaven,esmicolar,becaina,fleuma,eixam,ploviscó,amarat,trontollar,batzegades,encaterinada</textarea>
+		</div>
+		<div class="crucigrama test">
+		</div>
+		<textarea id="codice"></textarea>
+	</body>
+</html>

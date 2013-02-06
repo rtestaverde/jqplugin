@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>test quiz</title>
+		<style>
+			.questionsuccess{color: green;}
+			.questionerror{color: red;}
+			.questionnoanswer{color: #ccc;font-style:italic;}
+			.answerrigth{background: green;}
+		</style>
+		<script src="jquery-1.7.1.js"></script>
+		<script src="jquery-ui-1.8.17.js"></script>
+		<script src="jquery-ui-i18n.js"></script>
+		<script src="rtv.sjcl.js"></script>
+		<script src="rtv.plugin.quiz.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.quizbox').toQuiz({});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+		<h1>Test domande</h1>
+		<div id="quizbox1" class="quizbox">
+			<ul class="quizframe">
+				<li rel="questionblock" hash="NDEBEHG7G39C28B">
+					<span rel="1" atype="1" class="">dasfasdfas</span>
+					<ul>
+						<li><input type="radio" rel="1" name="answ11" value="1"><label>asdfasdf</label></li>
+					</ul>
+				</li>
+				<li rel="questionblock" hash="OHJ3IF9817BDDBGB">
+					<span rel="2" atype="1" class="">asdfasdfas</span>
+					<ul>
+						<li><input type="radio" rel="2" name="answ22" value="1"><label>asdfasdfdsaf</label></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		</div>
+		<div>
+		<h1>second test</h1>
+		<div id="quizbox2" class="quizbox">
+			<ul class="quizframe">
+				<li rel="questionblock" hash="NDEBEHG7G39C28B">
+					<span rel="1" atype="1" class="">dasfasdfas</span>
+					<ul>
+						<li><input type="radio" rel="1" name="answ11" value="1"><label>asdfasdf</label></li>
+					</ul>
+				</li>
+				<li rel="questionblock" hash="OHJ3IF9817BDDBGB">
+					<span rel="2" atype="1" class="">asdfasdfas</span>
+					<ul>
+						<li><input type="radio" rel="2" name="answ22" value="1"><label>asdfasdfdsaf</label></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</body>
+</html>
